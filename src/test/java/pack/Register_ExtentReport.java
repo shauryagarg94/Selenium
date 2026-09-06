@@ -15,21 +15,21 @@ public class Register_ExtentReport {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		ExtentHtmlReporter sparkReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+ "/reports/myExtentReport.html");
+		ExtentHtmlReporter sparkReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+ "/reports/myExtentReport.html");//design html page
 		sparkReporter.config().setDocumentTitle("Automation Report"); 
 		sparkReporter.config().setReportName("Functional Testing"); 
 		sparkReporter.config().setTheme(Theme.STANDARD);
 		
-		ExtentReports extent=new ExtentReports();
+		ExtentReports extent=new ExtentReports();// this is main engine manages whole report, attaches html report, add systeminfo, final report
 		extent.attachReporter(sparkReporter);
 		
-		extent.setSystemInfo("Environment","QA-SIT");
+		extent.setSystemInfo("Environment","QA-SIT");// to display values
 		extent.setSystemInfo("Tester Name","Kapoor");
 		extent.setSystemInfo("os","Windows11");
 		extent.setSystemInfo("Browser name","Chrome");
 		
 		
-		ExtentTest test = extent.createTest("MyFirstTest- RegisterPage", "This is register Page testCase"); 
+		ExtentTest test = extent.createTest("MyFirstTest- RegisterPage", "This is register Page testCase"); //(test name, description)
 
 	
 	

@@ -11,8 +11,7 @@
         </Console>
 
         <RollingFile name="File" fileName="${log-path}/automation.log"
-                     filePattern="${log-path}/automation-%d{MM-dd-yyyy}-%i.log.gz" 
-                     append="false">
+                     filePattern="${log-path}/automation-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern="${log-pattern}"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
